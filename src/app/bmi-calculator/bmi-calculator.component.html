@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-xs-12 col-md-6 offset-md-3">
+    <h3 class="text-center">Calculate you BMI</h3>
+    <form class="form">
+      <div class="form-group">
+        <label>Weight:</label>
+        <input #weight type="number" placeholder="Provide your weight in Kg" required class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Height:</label>
+        <input #height type="number" placeholder="Provide your height in Cm" required class="form-control">
+      </div>
+      <div class="text-center">
+        <button
+          type="submit"
+          class="btn btn-success"
+          (click)="calculate(weight.value, height.value)"
+        >Calculate!</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-xs-12 col-md-4 offset-md-4 mt-3">
+    <div class="alert alert-info text-center" role="alert" *ngIf="bmi">
+      <h5>The BMI calculation is</h5>
+      <strong>{{bmi.result}}</strong>
+      <span>Value: {{bmi.value}}</span>
+    </div>
+  </div>
+</div>

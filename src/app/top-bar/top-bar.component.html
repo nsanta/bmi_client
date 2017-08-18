@@ -1,0 +1,11 @@
+<nav class="navbar navbar-toggleable-md navbar-light navbar-inverse bg-inverse">
+  <a class="navbar-brand" routerLink="/">BMI calculator</a>
+  <ul *ngIf="loggedIn" class="nav navbar-nav float-xs-right">
+    <li><a class="navbar-brand" routerLink="/calculator">Calculator</a></li>
+    <li><a class="navbar-brand" (click)="logout()" href="">Logout</a></li>
+  </ul>
+  <ul *ngIf="!loggedIn" class="nav navbar-nav float-xs-right">
+    <li><a class="navbar-brand" [routerLinkActive]="['active']" routerLink="/login" href="">Login</a></li>
+    <li><a class="navbar-brand" [routerLinkActive]="['active']" routerLink="/register" href="">Register</a></li>
+  </ul>
+</nav>
